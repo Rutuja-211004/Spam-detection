@@ -1,0 +1,84 @@
+📦 Requirements.txt Details
+1️⃣ Flask
+Flask is a lightweight Python web framework used to build web applications.
+Use in this project:
+Creates the web server
+Connects the HTML pages (index.html, result.html)
+Handles user input messages
+Sends predictions from the model to the frontend
+Example in app.py:
+Python
+from flask import Flask, render_template, request
+2️⃣ Scikit-learn
+Scikit-learn is a machine learning library used to train and use the spam detection model.
+Use in this project:
+Training the spam detection model
+Text classification
+Prediction whether a message is spam or not
+Common algorithms used:
+Naive Bayes
+Logistic Regression
+Support Vector Machine
+Example:
+Python
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+3️⃣ Pandas
+Pandas is used for handling datasets and data analysis.
+Use in this project:
+Reading the spam dataset
+Data preprocessing
+Cleaning text data
+Example:
+Python
+import pandas as pd
+
+data = pd.read_csv("spam.csv")
+4️⃣ NumPy
+NumPy is used for numerical computations and array operations.
+Use in this project:
+Handling numerical features
+Supporting machine learning operations
+Example:
+Python
+import numpy as np
+5️⃣ NLTK (Natural Language Toolkit)
+NLTK is used for Natural Language Processing (NLP).
+Use in this project:
+Removing stopwords
+Tokenizing words
+Text preprocessing
+Improving spam detection accuracy
+Example:
+Python
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+6️⃣ Pickle-Mixin
+Pickle is used to save and load the trained machine learning model.
+Use in this project:
+Save trained model
+Load model in Flask app for prediction
+Example:
+Python
+import pickle
+
+model = pickle.load(open("model.pkl","rb"))
+7️⃣ Gunicorn
+Gunicorn is a Python WSGI HTTP server used for deploying the Flask application on production servers.
+Use in this project:
+Deploy project on platforms like:
+Render
+Heroku
+AWS
+Example:
+Bash
+gunicorn app:app
+📌 Final requirements.txt
+
+flask
+scikit-learn
+pandas
+numpy
+nltk
+pickle-mixin
+gunicorn
